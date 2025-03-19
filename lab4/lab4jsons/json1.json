@@ -1,0 +1,13 @@
+{
+    "first-name": "Valentina",
+    "age": 30,
+    "city": "Iasi",
+    "job": "teacher",
+    "isStudent": false,
+    "hobbies": [
+        "reading",
+        "cooking",
+        "traveling"
+    ],
+    "favourite-movie": "Interstellar"
+}

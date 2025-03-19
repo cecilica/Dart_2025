@@ -1,0 +1,16 @@
+{
+    "name": "Cecilia",
+    "age": 22,
+    "city": "Cluj-Napoca",
+    "job": "student",
+    "isStudent": true,
+    "culinarySkills": {
+        "rating": 5,
+        "bestDish": "pasta"
+    },
+    "languages": [
+        "Romanian",
+        "English",
+        "French"
+    ]
+}
