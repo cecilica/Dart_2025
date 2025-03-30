@@ -1,0 +1,7 @@
+[
+  { "name": "Not categorised", "image": "assets/images/none.png" },
+  { "name": "Groceries", "image": "assets/images/groceries.png" },
+  { "name": "Electronics", "image": "assets/images/electronics.png" },
+  { "name": "Clothing", "image": "assets/images/clothing.png" },
+  { "name": "Household", "image": "assets/images/household.png" }
+]
