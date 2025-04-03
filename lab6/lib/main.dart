@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Comfortaa'),
       title: 'Shopping List',
       home: const ShoppingListHomePage(title: 'Your Shopping List'),
     );

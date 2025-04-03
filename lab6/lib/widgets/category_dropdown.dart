@@ -7,10 +7,10 @@ class CategoryDropdown extends StatefulWidget {
   const CategoryDropdown({super.key, required this.onCategorySelected});
 
   @override
-  _CategoryDropdownState createState() => _CategoryDropdownState();
+  CategoryDropdownState createState() => CategoryDropdownState();
 }
 
-class _CategoryDropdownState extends State<CategoryDropdown> {
+class CategoryDropdownState extends State<CategoryDropdown> {
   List<Map<String, String>> _categories = [];
   String? _selectedCategory;
 
@@ -24,7 +24,8 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
     final categories = await CategoryService.loadCategories();
     setState(() {
       _categories = categories;
-      _selectedCategory = categories.isNotEmpty ? categories.first['name'] : null;
+      _selectedCategory =
+          categories.isNotEmpty ? categories.first['name'] : null;
     });
     widget.onCategorySelected(_selectedCategory!);
   }
@@ -33,18 +34,20 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: _selectedCategory,
-      items: _categories.map((category) {
-        return DropdownMenuItem(
-          value: category['name'],
-          child: Row(
-            children: [
-              Image.asset(category['image']!, width: 24, height: 24),
-              const SizedBox(width: 10),
-              Text(category['name']!),
-            ],
-          ),
-        );
-      }).toList(),
+      items:
+          _categories.map((category) {
+            return DropdownMenuItem(
+              value: category['name'],
+              child: Row(
+                children: [
+                  Image.asset(category['image']!, width: 24, height: 24),
+                  const SizedBox(width: 10),
+                  Text(category['name']!),
+                ],
+              ),
+            );
+          }).toList(),
+      underline: Container(height: 0),
       onChanged: (newCategory) {
         setState(() {
           _selectedCategory = newCategory;
@@ -52,5 +55,11 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
         widget.onCategorySelected(newCategory!);
       },
     );
+  }
+
+  void resetCategory(String category) {
+    setState(() {
+      _selectedCategory = category;
+    });
   }
 }

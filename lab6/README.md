@@ -1,16 +1,4 @@
-# shopping_list_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Continue the application started in the previous lab:
+1. For each item in the list, add a category.
+2. Depending on the category of each item, add a representative image next to it using `CustomPainter`.
+3. Every 5 seconds, the images will change their color.

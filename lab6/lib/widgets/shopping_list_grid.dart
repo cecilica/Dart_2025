@@ -17,7 +17,7 @@ class ShoppingListGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+        crossAxisCount: 4,
         crossAxisSpacing: 2.0,
         mainAxisSpacing: 2.0,
       ),

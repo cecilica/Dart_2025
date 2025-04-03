@@ -1,7 +1,7 @@
 name: shopping_list_app
 description: "A new Flutter project."
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
-  
+
 flutter:
   uses-material-design: true
   assets:
@@ -27,3 +27,9 @@ flutter:
     - assets/images/clothing.png
     - assets/images/household.png
     - assets/images/none.png
+    - assets/fonts/comfortaa-latin-600-normal.ttf
+  fonts:
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/comfortaa-latin-600-normal.ttf
+          weight: 600

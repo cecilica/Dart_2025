@@ -60,37 +60,65 @@ class _ShoppingListItemState extends State<ShoppingListItem> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ColorFiltered(
-                  colorFilter: ColorFilter.mode(_colors[_colorIndex], BlendMode.modulate),
-                  child: Image.asset(widget.imagePath, width: 40, height: 40),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  widget.item,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  widget.category,
-                  style: TextStyle(color: Colors.grey[700]),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      _colors[_colorIndex],
+                      BlendMode.modulate,
+                    ),
+                    child: Image.asset(
+                      widget.imagePath,
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    widget.item,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    widget.category,
+                    style: TextStyle(color: Colors.grey[700]),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
             top: 0,
             right: 0,
-            child: IconButton(
-              icon: const Icon(Icons.close, color: Colors.pinkAccent, size: 18),
-              onPressed: widget.onRemove,
+            child: buildTooltip(
+              message: 'Remove Item',
+              child: IconButton(
+                icon: Icon(
+                  Icons.close,
+                  color: Colors.pinkAccent[100],
+                  size: 20.0,
+                ),
+                onPressed: widget.onRemove,
+              ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildTooltip({required Widget child, required String message}) {
+    return Tooltip(
+      message: message,
+      padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 3.0),
+      decoration: BoxDecoration(
+        color: Colors.pink[300],
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+      child: child,
     );
   }
 }
